@@ -7,4 +7,4 @@ jdk:
 sudo: false
 
 script:
-  - bin/build.sh
+  - rvm install 2.2.2
