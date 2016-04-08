@@ -11,6 +11,6 @@ git submodule update
 
 gem install bundler
 bundle install
-rackup
+rackup --host 127.0.0.1&
 
 curl 'localhost:9292/tracks/java/hello-world'

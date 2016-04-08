@@ -5,6 +5,7 @@ jdk:
 
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
+cache: bundler
 
 script:
   - bin/journey-setup.sh
