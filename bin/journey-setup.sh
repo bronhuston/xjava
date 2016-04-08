@@ -11,4 +11,4 @@ git submodule update
 
 gem install bundler
 bundle install
-rackup
+rackup&
