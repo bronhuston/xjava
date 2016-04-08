@@ -2,6 +2,7 @@
 
 git clone https://github.com/exercism/x-api
 cd x-api
+git submodule init -- metadata
 git submodule init -- tracks/java
 git submodule update
 
