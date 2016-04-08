@@ -11,4 +11,4 @@ rackup --host 127.0.0.1&
 
 ps aux | grep rackup
 
-curl 'localhost:9292/tracks/java/hello-world'
+curl '127.0.0.1:9292/tracks/java/hello-world'
