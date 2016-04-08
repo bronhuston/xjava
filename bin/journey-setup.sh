@@ -12,3 +12,5 @@ git submodule update
 gem install bundler
 bundle install
 rackup&
+
+curl 'localhost:9292/tracks/java/hello-world'
