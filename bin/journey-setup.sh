@@ -12,7 +12,6 @@ rackup&
 
 sleep 5
 
-ls -la metadata
-ls -la tracks/java/exercises/hello-world
+ps aux | grep rackup
 
 curl -i 'localhost:9292/tracks/java/hello-world'
