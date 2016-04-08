@@ -12,4 +12,7 @@ rackup&
 
 sleep 5
 
+ls -la metadata
+ls -la tracks/java/exercises
+
 curl 'localhost:9292/tracks/java/hello-world'
