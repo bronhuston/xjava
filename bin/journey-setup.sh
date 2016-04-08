@@ -13,6 +13,6 @@ rackup&
 sleep 5
 
 ls -la metadata
-ls -la tracks/java/exercises
+ls -la tracks/java/exercises/hello-world
 
-curl 'localhost:9292/tracks/java/hello-world'
+curl -i 'localhost:9292/tracks/java/hello-world'
