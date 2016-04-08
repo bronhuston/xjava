@@ -7,8 +7,8 @@ git submodule update
 
 gem install bundler
 bundle install
-rackup --host 127.0.0.1&
+rackup&
 
-ps aux | grep rackup
+netstat -anp tcp | grep 9292
 
-curl '127.0.0.1:9292/tracks/java/hello-world'
+curl 'localhost:9292/tracks/java/hello-world'
