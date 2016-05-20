@@ -8,7 +8,8 @@ git submodule update
 
 gem install bundler
 bundle install
-rackup&
+
+RACK_ENV=development rackup&
 
 sleep 5
 
