@@ -13,5 +13,8 @@ RACK_ENV=development rackup&
 
 sleep 5
 
-go get -u github.com/exercism/cli/exercism
-excercism -v
+pwd
+echo $PATH
+echo $HOME
+#go get -u github.com/exercism/cli/exercism
+#excercism -v
