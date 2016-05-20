@@ -13,8 +13,6 @@ RACK_ENV=development rackup&
 
 sleep 5
 
-pwd
-echo $PATH
-echo $HOME
-#go get -u github.com/exercism/cli/exercism
-#excercism -v
+export GOPATH=$HOME/build/bronhuston
+go get -u github.com/exercism/cli/exercism
+excercism -v
