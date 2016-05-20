@@ -14,6 +14,6 @@ RACK_ENV=development rackup&
 sleep 5
 
 export GOPATH=$HOME/build/bronhuston
-#export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 go get -u github.com/exercism/cli/exercism
 exercism -v
