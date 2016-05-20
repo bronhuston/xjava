@@ -13,6 +13,5 @@ RACK_ENV=development rackup&
 
 sleep 5
 
-ps aux | grep rackup
-
-curl -i 'localhost:9292/tracks/java/hello-world'
+go get -u github.com/exercism/cli/exercism
+excercism -v
