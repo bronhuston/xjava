@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install tree -y
-
 git clone https://github.com/exercism/x-api
 cd x-api
 git submodule init -- metadata
