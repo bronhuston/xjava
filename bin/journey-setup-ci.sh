@@ -13,12 +13,14 @@ RACK_ENV=development rackup&
 
 sleep 5
 
-export GOPATH=$HOME/build/bronhuston
+export HOME=$HOME/build/bronhuston
+export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 go get -u github.com/exercism/cli/exercism
 exercism -v
 
 cd ~
+pwd
 mkdir -p workspace/exercism/exercises
 cd ~/workspace/exercism/exercises
 exercism configure --dir=~/workspace/exercism/exercises
