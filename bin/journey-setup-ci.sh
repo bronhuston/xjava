@@ -27,7 +27,7 @@ pwd
 mkdir -p workspace/exercism/exercises
 cd ~/workspace/exercism/exercises
 exercism configure --dir=~/workspace/exercism/exercises
-exercism configure --api http://::1:9292
+exercism configure --api http://localhost:9292
 
 curl -v 'localhost:9292/v2/exercises/java/bob'
 exercism --verbose debug
