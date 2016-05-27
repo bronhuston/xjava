@@ -1,4 +1,6 @@
 #!/bin/bash
+
+eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=1.5.3 bash)"
 go version
 
 git clone https://github.com/exercism/x-api
