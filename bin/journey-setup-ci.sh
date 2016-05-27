@@ -25,6 +25,6 @@ mkdir -p workspace/exercism/exercises
 cd ~/workspace/exercism/exercises
 exercism configure --dir=~/workspace/exercism/exercises
 exercism configure --api http://localhost:9292
-exercism debug
-exercism fetch java bob
+exercism --verbose debug
+exercism --verbose fetch java bob
 tree java
