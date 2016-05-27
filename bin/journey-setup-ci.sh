@@ -1,4 +1,5 @@
 #!/bin/bash
+go version
 
 git clone https://github.com/exercism/x-api
 cd x-api
