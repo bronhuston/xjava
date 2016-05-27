@@ -1,7 +1,6 @@
 #!/bin/bash
 
 eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=1.5.3 bash)"
-go version
 
 git clone https://github.com/exercism/x-api
 cd x-api
@@ -29,7 +28,6 @@ cd ~/workspace/exercism/exercises
 exercism configure --dir=~/workspace/exercism/exercises
 exercism configure --api http://localhost:9292
 
-curl -v 'localhost:9292/v2/exercises/java/bob'
-exercism --verbose debug
-exercism --verbose fetch java bob
+exercism debug
+exercism fetch java bob
 tree java

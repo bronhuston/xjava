@@ -1,5 +1,7 @@
 #!/bin/bash
 
+go version
+
 git clone https://github.com/exercism/x-api
 cd x-api
 git submodule init -- metadata
@@ -24,8 +26,6 @@ cd ~/workspace/exercism/exercises
 exercism configure --dir=~/workspace/exercism/exercises
 exercism configure --api http://localhost:9292
 
-curl -v 'localhost:9292/v2/exercises/java/bob'
-
-exercism --verbose debug
-exercism --verbose fetch java bob
+exercism debug
+exercism fetch java bob
 tree java
