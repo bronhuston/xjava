@@ -27,7 +27,8 @@ exercism configure --dir=~/workspace/exercism/exercises
 exercism configure --api http://localhost:9292
 
 curl -v 'localhost:9292/v2/exercises/java/bob'
-
+tcpdump -vv -c 20 -s 0 -i lo0 -A tcp port 9292 > out.txt &
 exercism --verbose debug
 exercism --verbose fetch java bob
 tree java
+cat out.txt
