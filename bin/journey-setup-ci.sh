@@ -32,6 +32,6 @@ exercism debug
 exercism fetch java bob
 tree java
 
-cp ~/workspace/exercism/xjava/exercises/bob/src/example/java/* ~/workspace/exercism/exercises/java/bob/src/main/java/
+cp ~/exercises/bob/src/example/java/* ~/workspace/exercism/exercises/java/bob/src/main/java/
 cd ~/workspace/exercism/exercises/java/bob/
 gradle test
