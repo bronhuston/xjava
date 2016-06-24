@@ -38,10 +38,18 @@ exercism debug
 
 cd $REPO_ROOT
 EXERCISES=`cat config.json | jq '.problems []' --raw-output`
+TOTAL_EXERCISES=`cat config.json | jq '.problems | length'`
+CURRENT_EXERCISE_NUMBER=1
 
 for EXERCISE in $EXERCISES; do
+  echo ''
+  echo '****' Testing $EXERCISE '('$CURRENT_EXERCISE_NUMBER / $TOTAL_EXERCISES') ****'
+  echo ''
   exercism fetch java $EXERCISE
   cp -R -H $REPO_ROOT/exercises/$EXERCISE/src/example/java/* $EXERCISM_HOME/java/$EXERCISE/src/main/java/
   cd $EXERCISM_HOME/java/$EXERCISE/
   gradle test
+
+  CURRENT_EXERCISE_NUMBER=$((CURRENT_EXERCISE_NUMBER + 1))
 done
+
