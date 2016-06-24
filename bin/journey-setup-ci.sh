@@ -5,7 +5,7 @@ eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme 
 export HOME=$HOME/build/bronhuston
 export GOPATH=$HOME
 
-REPO_ROOT=$HOME
+REPO_ROOT=~
 EXERCISM_HOME=~/workspace/exercism/exercises
 SET_RUBY_VER_CMD=""
 
@@ -37,6 +37,8 @@ exercism configure --api http://localhost:9292
 exercism debug
 
 cd $REPO_ROOT
+pwd
+ls
 EXERCISES=`cat config.json | jq '.problems []' --raw-output`
 
 for EXERCISE in $EXERCISES; do
