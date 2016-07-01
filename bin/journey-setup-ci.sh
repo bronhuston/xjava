@@ -2,7 +2,7 @@
 set -e
 
 eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=1.5.3 bash)"
-export HOME=$HOME/build/bronhuston
+export HOME=$PWD/..
 export GOPATH=$HOME
 
 REPO_ROOT=~/xjava
