@@ -33,7 +33,8 @@ cd $XAPI_HOME
 git clone https://github.com/exercism/x-api .
 git submodule init -- metadata
 git submodule update
-( cd tracks && rmdir java && ln -s $REPO_ROOT java )
+( cd tracks && rmdir java && ln -s $REPO_ROOT java && cd java/exercises && gradle clean )
+
 
 $SET_RUBY_VER_CMD
 gem install bundler
