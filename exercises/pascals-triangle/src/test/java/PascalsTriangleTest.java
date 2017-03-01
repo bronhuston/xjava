@@ -1,10 +1,17 @@
 import org.junit.Test;
+import org.junit.Ignore;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
+
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class PascalsTriangleTest {
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    
     @Test
     public void testTriangleWithFourRows() {
         int[][] expectedOutput = new int[][]{
@@ -17,6 +24,7 @@ public class PascalsTriangleTest {
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(4));
     }
 
+    @Ignore
     @Test
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
@@ -31,6 +39,7 @@ public class PascalsTriangleTest {
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(6));
     }
 
+    @Ignore
     @Test
     public void testExpectEmptyTriangle() {
         int[][] expectedOutput = new int[][]{
@@ -40,6 +49,7 @@ public class PascalsTriangleTest {
         assertArrayEquals(expectedOutput, PascalsTriangle.computeTriangle(0));
     }
 
+    @Ignore
     @Test
     public void testValidInput() {
         int[][] input = new int[][]{
@@ -53,6 +63,7 @@ public class PascalsTriangleTest {
         assertEquals(true, PascalsTriangle.isTriangle(input));
     }
 
+    @Ignore
     @Test
     public void testInvalidInput() {
         int[][] input = new int[][]{
@@ -65,8 +76,10 @@ public class PascalsTriangleTest {
         assertEquals(false, PascalsTriangle.isTriangle(input));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Ignore
+    @Test
     public void testValidatesNotNegativeRows() {
+        thrown.expect(IllegalArgumentException.class);
         PascalsTriangle.computeTriangle(-1);
     }
 }

@@ -1,8 +1,10 @@
 import org.junit.Test;
+import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
 public class AcronymTest {
+
 
     @Test
     public void fromTitleCasedPhrases() {
@@ -11,6 +13,7 @@ public class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase));
     }
 
+    @Ignore
     @Test
     public void fromOtherTitleCasedPhrases() {
         final String phrase = "Ruby on Rails";
@@ -18,6 +21,7 @@ public class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase));
     }
 
+    @Ignore
     @Test
     public void fromInconsistentlyCasedPhrases() {
         final String phrase = "HyperText Markup Language";
@@ -25,6 +29,7 @@ public class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase));
     }
 
+    @Ignore
     @Test
     public void fromPhrasesWithPunctuation() {
         final String phrase = "First In, First Out";
@@ -32,6 +37,7 @@ public class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase));
     }
 
+    @Ignore
     @Test
     public void fromOtherPhrasesWithPunctuation() {
         final String phrase = "PHP: Hypertext Preprocessor";
@@ -39,10 +45,27 @@ public class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase));
     }
 
+    @Ignore
+    @Test
+    public void fromPhrasesWithNonAcronymAllCapsWord() {
+        final String phrase = "GNU Image Manipulation Program";
+        final String expected = "GIMP";
+        assertEquals(expected, Acronym.generate(phrase));
+    }
+
+    @Ignore
     @Test
     public void fromPhrasesWithPunctuationAndSentenceCasing() {
         final String phrase = "Complementary metal-oxide semiconductor";
         final String expected = "CMOS";
+        assertEquals(expected, Acronym.generate(phrase));
+    }
+
+    @Ignore
+    @Test
+    public void fromPhraseWithSingleLetterWord() {
+        final String phrase = "Cat in a Hat";
+        final String expected = "CIAH";
         assertEquals(expected, Acronym.generate(phrase));
     }
 

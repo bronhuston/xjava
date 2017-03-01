@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -11,10 +12,10 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class RomanNumeralsTest {
 
-    private int input;
-    private String expectedOutput;
+    private int arabicNumeral;
+    private String romanNumeral;
 
-    @Parameters
+    @Parameters(name = "{index}: expected arabic numeral {0} to be converted to roman numeral \"{1}\".")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {0, ""},
@@ -39,15 +40,16 @@ public class RomanNumeralsTest {
         });
     }
 
-    public RomanNumeralsTest(int input, String expectedOutput) {
-        this.input = input;
-        this.expectedOutput = expectedOutput;
+    public RomanNumeralsTest(int arabicNumeral, String romanNumeral) {
+        this.arabicNumeral = arabicNumeral;
+        this.romanNumeral = romanNumeral;
     }
+
 
     @Test
     public void convertArabicNumberalToRomanNumeral() {
-        RomanNumeral romanNumeral = new RomanNumeral(input);
+        RomanNumeral romanNumeral = new RomanNumeral(arabicNumeral);
 
-        assertEquals(expectedOutput, romanNumeral.getRomanNumeral());
+        assertEquals(this.romanNumeral, romanNumeral.getRomanNumeral());
     }
 }

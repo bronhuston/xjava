@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -14,10 +15,10 @@ public class AtbashTest {
 
     @RunWith(Parameterized.class)
     public static class EncodeTest {
-        private String input;
-        private String expectedOutput;
+        private String plaintext;
+        private String ciphertext;
 
-        @Parameters
+        @Parameters(name = "{index}: expected plaintext \"{0}\" to encode to ciphertext \"{1}\".")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][] {
                     { "no", "ml" },
@@ -30,23 +31,24 @@ public class AtbashTest {
             });
         }
 
-        public EncodeTest(String input, String expectedOutput) {
-            this.input = input;
-            this.expectedOutput = expectedOutput;
+        public EncodeTest(String plaintext, String ciphertext) {
+            this.plaintext = plaintext;
+            this.ciphertext = ciphertext;
         }
 
-        @Test
+
+    @Test
         public void test() {
-            assertEquals(expectedOutput, Atbash.encode(input));
+            assertEquals(ciphertext, Atbash.encode(plaintext));
         }
     }
 
     @RunWith(Parameterized.class)
     public static class DecodeTest {
-        private String input;
-        private String expectedOutput;
+        private String ciphertext;
+        private String plaintext;
 
-        @Parameters
+        @Parameters(name = "{index}: expected ciphertext \"{0}\" to decode to plaintext \"{1}\".")
         public static Collection<Object[]> data() {
             return Arrays.asList(new Object[][] {
                     { "vcvix rhn", "exercism" },
@@ -55,14 +57,15 @@ public class AtbashTest {
             });
         }
 
-        public DecodeTest(String input, String expectedOutput) {
-            this.input = input;
-            this.expectedOutput = expectedOutput;
+        public DecodeTest(String ciphertext, String plaintext) {
+            this.ciphertext = ciphertext;
+            this.plaintext = plaintext;
         }
 
-        @Test
+        @Ignore
+    @Test
         public void test() {
-            assertEquals(expectedOutput, Atbash.decode(input));
+            assertEquals(plaintext, Atbash.decode(ciphertext));
         }
     }
 }

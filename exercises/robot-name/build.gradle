@@ -7,6 +7,12 @@ repositories {
 }
 
 dependencies {
-  testCompile "junit:junit:4.10"
+  testCompile "junit:junit:4.12"
 }
 
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}
